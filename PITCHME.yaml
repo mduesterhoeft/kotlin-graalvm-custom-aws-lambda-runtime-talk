@@ -1,0 +1,6 @@
+theme : white
+theme-override : slides/custom.css
+logo : slides/MOIA_Logo.png
+logo-postion : top-right
+layout : center
+published : false
