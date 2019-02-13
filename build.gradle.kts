@@ -15,19 +15,18 @@ repositories {
 
 tasks.withType<ShadowJar> {
   archiveBaseName.set("package")
-  //manifest {
-  //  attributes(mapOf("Main-Class" to "com.github.md.ApplicationKt"))
-  // }
+  manifest {
+    attributes(mapOf("Main-Class" to "com.github.md.ApplicationKt"))
+  }
 }
 
-val http4kVersion = "3.103.2"
 dependencies {
 
   compile(kotlin("stdlib-jdk8"))
   compile(kotlin("reflect"))
 
+  compile("org.http4k:http4k-core:3.103.2")
   compile("com.amazonaws:aws-lambda-java-core:1.2.0")
-  compile("com.amazonaws:aws-lambda-java-log4j2:1.1.0")
   compile("com.fasterxml.jackson.core:jackson-databind:2.9.6")
   compile("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.6")
 

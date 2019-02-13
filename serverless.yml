@@ -47,7 +47,7 @@ provider:
 
 # you can add packaging information here
 package:
-  artifact: build/libs/package-1.0.jar
+  individually: true
 
 functions:
   hello:
@@ -56,3 +56,14 @@ functions:
       - http:
           path: hello/{name}
           method: get
+    package:
+      artifact: build/libs/package-1.0.jar
+  hello-runtime:
+    handler: com.github.md.Handler
+    runtime: provided
+    events:
+      - http:
+          path: hello-runtime/{name}
+          method: get
+    package:
+      artifact: build/package/bundle.zip

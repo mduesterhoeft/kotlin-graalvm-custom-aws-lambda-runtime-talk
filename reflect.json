@@ -1,0 +1,26 @@
+[
+  {
+    "name": "com.github.md.ApiGatewayRequest",
+    "allPublicConstructors" : true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "com.github.md.Handler",
+    "allPublicConstructors" : true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "com.github.md.HelloResponse",
+    "allPublicConstructors" : true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "java.util.LinkedHashMap",
+    "allPublicConstructors" : true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "com.github.md.ApiGatewayResponse",
+    "allPublicMethods": true
+  }
+]
