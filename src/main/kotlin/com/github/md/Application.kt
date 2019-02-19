@@ -37,9 +37,7 @@ fun main() {
 
         val response = handlerInstance.handleRequest(request, CustomContext(requestId))
 
-        client(Request(
-                POST,
-                "http://$runtimeApiEndpoint/2018-06-01/runtime/invocation/$requestId/response"
+        client(Request(POST, "http://$runtimeApiEndpoint/2018-06-01/runtime/invocation/$requestId/response"
         ).body(json.writeValueAsString(response)))
     }
 }
