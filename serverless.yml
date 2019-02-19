@@ -7,7 +7,7 @@ provider:
   region: eu-central-1
 
 package:
-  individually: true
+  artifact: build/libs/package-1.0.jar
 
 functions:
   hello:
@@ -16,14 +16,3 @@ functions:
       - http:
           path: hello/{name}
           method: get
-    package:
-      artifact: build/libs/package-1.0.jar
-  hello-runtime:
-    handler: com.github.md.Handler
-    runtime: provided
-    events:
-      - http:
-          path: hello-runtime/{name}
-          method: get
-    package:
-      artifact: build/package/bundle.zip
