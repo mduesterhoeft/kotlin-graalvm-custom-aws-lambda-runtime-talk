@@ -6,7 +6,6 @@ import com.amazonaws.services.lambda.runtime.RequestHandler
 class Handler: RequestHandler<ApiGatewayRequest, ApiGatewayResponse> {
 
   override fun handleRequest(input: ApiGatewayRequest, context:Context): ApiGatewayResponse {
-    println("received: $input")
 
     return ApiGatewayResponse.build {
       statusCode = 200
