@@ -47,7 +47,7 @@
 ### Custom AWS Lambda Runtimes
 
 - open up AWS Lambda for any programming language
-- is a program that runs the Lambda handler
+- a runtime is a program that runs the Lambda handler
 - can be included in the deployment package
 
 ---
@@ -55,5 +55,9 @@
 ### Custom AWS Lambda Runtimes
 
 ![](slides/custom-runtime.png)
+
+---?color=#092736
+
+## Demo
 
 
