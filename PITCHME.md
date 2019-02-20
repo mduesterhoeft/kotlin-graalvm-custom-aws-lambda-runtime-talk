@@ -33,7 +33,7 @@ What is the JVM doing during startup?
 
 ---
 
-![](slides/tim-bray-language-choices.png)
+![](slides/tim-bray-languange-choices.png)
 
 <a href="https://www.youtube.com/watch?v=IPOvrK3S3gQ" style="font-size:small;">AWS re:Invent 2018: [REPEAT 1] Inside AWS: Technology Choices for Modern Applications (SRV305-R1)</a>
 
@@ -81,9 +81,13 @@ What is the JVM doing during startup?
 
 ### Custom AWS Lambda Runtimes
 
+@ul
+
 - open up AWS Lambda for any programming language
 - a runtime is a program that runs the Lambda handler
 - can be included in the deployment package
+
+@ulend
 
 ---
 
