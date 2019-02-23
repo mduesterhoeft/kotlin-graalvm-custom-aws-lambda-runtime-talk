@@ -8,7 +8,13 @@
 
 ---?color=#0047b3
 
-## Cold Startup and the JVM
+## Cold Startup
+
+---
+
+### What is Cold Startup
+
+![](slides/cold-start.png)
 
 ---
 
