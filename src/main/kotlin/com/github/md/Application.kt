@@ -16,6 +16,8 @@ import org.http4k.core.Request
 import org.http4k.core.Response
 
 const val requestIdHeaderName = "lambda-runtime-aws-request-id"
+const val runtimeApiEndpointVariableName = "AWS_LAMBDA_RUNTIME_API"
+const val handlerVariableName = "_HANDLER"
 
 val client: HttpHandler = JavaHttpClient()
 
@@ -23,8 +25,8 @@ val json = jacksonObjectMapper().disable(DeserializationFeature.FAIL_ON_UNKNOWN_
 
 @Suppress("UNCHECKED_CAST")
 fun main() {
-    val runtimeApiEndpoint = System.getenv("AWS_LAMBDA_RUNTIME_API")
-    val handler = System.getenv("_HANDLER")
+    val runtimeApiEndpoint = System.getenv(runtimeApiEndpointVariableName)
+    val handler = System.getenv(handlerVariableName)
     val handlerInstance = Class.forName(handler).newInstance() as RequestHandler<ApiGatewayRequest, ApiGatewayResponse>
 
     while(true) {
@@ -42,12 +44,11 @@ fun main() {
     }
 }
 
+// see https://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html
 class CustomContext(val requestId: String): Context {
     override fun getAwsRequestId(): String = requestId
 
-    override fun getLogStreamName(): String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun getLogStreamName(): String = System.getenv("AWS_LAMBDA_LOG_STREAM_NAME")
 
     override fun getClientContext(): ClientContext {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -69,17 +70,11 @@ class CustomContext(val requestId: String): Context {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun getMemoryLimitInMB(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun getMemoryLimitInMB(): Int = System.getenv("AWS_LAMBDA_FUNCTION_MEMORY_SIZE").toInt()
 
-    override fun getLogGroupName(): String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun getLogGroupName(): String = System.getenv("AWS_LAMBDA_LOG_GROUP_NAME")
 
-    override fun getFunctionVersion(): String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun getFunctionVersion(): String = System.getenv("AWS_LAMBDA_FUNCTION_VERSION")
 
     override fun getIdentity(): CognitoIdentity {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
