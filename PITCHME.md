@@ -20,7 +20,7 @@
 
 ### Cold Startup and the JVM
 
-What is the JVM doing during startup?
+What is happening during JVM startup?
 
 - JIT compilation
 - garbage collection
@@ -104,5 +104,3 @@ What is the JVM doing during startup?
 ---?color=#092736
 
 ## Demo
-
-
