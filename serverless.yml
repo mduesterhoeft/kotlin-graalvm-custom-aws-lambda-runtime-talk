@@ -5,6 +5,12 @@ provider:
   name: aws
   runtime: java8
   region: eu-central-1
+  iamRoleStatements:
+    - Effect: "Allow"
+      Resource: "*"
+      Action:
+        - "dynamodb:GetItem"
+        - "dynamodb:PutItem"
 
 package:
   individually: true
@@ -27,3 +33,17 @@ functions:
           method: get
     package:
       artifact: build/package/bundle.zip
+
+resources:
+  Resources:
+    usersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: greetings
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
