@@ -104,3 +104,12 @@ What is happening during JVM startup?
 ---?color=#092736
 
 ## Demo
+
+---
+
+## Show me the numbers
+
+| runtime | cold startup plain | cold startup dynamodb | 
+| java 8 | 2100ms |  |
+| custom graalvm | 180ms |  |
+
