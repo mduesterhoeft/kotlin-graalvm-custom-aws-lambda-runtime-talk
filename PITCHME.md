@@ -111,8 +111,21 @@ What is happening during JVM startup?
 
 Observed cold startup times
 
-| runtime | cold startup plain | cold startup dynamodb | 
-| java 8 | 2000 - 2200ms | 3500 - 4000ms |
-| custom graalvm | 160 - 180ms | 330 - 360ms |
+<canvas data-chart="bar">
+<!-- 
+{
+ "data": {
+  "labels": ["java8","custom"],
+  "datasets": [
+   {
+    "data":[170,2100],
+    "label":"hello world"
+   }
+  ]
+ }, 
+ "options": { "responsive": "true" }
+}
+-->
+</canvas>
 
 
