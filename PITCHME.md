@@ -115,10 +115,10 @@ Observed cold startup times
 <!-- 
 {
  "data": {
-  "labels": [],
+  "labels": ["1","2","3","4","5"],
   "datasets": [
    {
-    "data":[142,154,135,173, 173],
+    "data":[142,154,135,173,173],
     "label":"custom runtime", "backgroundColor":"rgba(13,143,143,.9)"
    },
    {
