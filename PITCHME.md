@@ -115,7 +115,7 @@ Observed cold startup times
 <!-- 
 {
  "data": {
-  "labels": ["1","2","3","4","5"]
+  "labels": ["1","2","3","4","5"],
   "datasets": [
    {
     "data":[142,154,135,173,173],
