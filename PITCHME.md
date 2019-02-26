@@ -159,6 +159,7 @@ Observed cold startup times
 ---
 
 ![](slides/link.png)
+
 @fa[eye] [https://gitpitch.com/mduesterhoeft/kotlin-graalvm-custom-aws-lambda-runtime-talk](https://gitpitch.com/mduesterhoeft/kotlin-graalvm-custom-aws-lambda-runtime-talk)
 
 @fa[github] [mduesterhoeft/kotlin-graalvm-custom-aws-lambda-runtime-talk](https://github.com/mduesterhoeft/kotlin-graalvm-custom-aws-lambda-runtime-talk)
