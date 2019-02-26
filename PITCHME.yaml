@@ -2,6 +2,7 @@ theme : white
 theme-override : slides/custom.css
 logo : slides/MOIA_Logo.png
 logo-postion : top-right
+title: "Fighting cold startup issues for your Kotlin Lambda with GraalVM"
 footnote : "Fighting cold startup issues for your Kotlin Lambda with GraalVM - Mathias Düsterhöft"
 layout : center
 charts : true
