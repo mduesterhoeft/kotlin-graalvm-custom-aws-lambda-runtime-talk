@@ -109,7 +109,10 @@ What is happening during JVM startup?
 
 ## Show me the numbers
 
+Observed cold startup times
+
 | runtime | cold startup plain | cold startup dynamodb | 
-| java 8 | 2100ms |  |
-| custom graalvm | 180ms |  |
+| java 8 | 2000 - 2200ms | 3500 - 4000ms |
+| custom graalvm | 160 - 180ms | 330 - 360ms |
+
 
