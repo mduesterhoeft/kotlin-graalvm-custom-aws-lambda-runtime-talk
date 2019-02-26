@@ -122,12 +122,12 @@ Observed cold startup times
     "label":"custom runtime", "backgroundColor":"rgba(20,220,220,1)"
    },
    {
-    "data":[2240,2038,2150,2110,2080],
-    "label":"java8 runtime", "backgroundColor":"rgba(220,120,120,1)"
-   },
-   {
     "data":[327,386,308,342,310],
     "label":"custom runtime with DynamoDB", "backgroundColor":"rgba(20,220,220,1)"
+   },
+   {
+    "data":[2240,2038,2150,2110,2080],
+    "label":"java8 runtime", "backgroundColor":"rgba(220,120,120,1)"
    },
    {
     "data":[3800,3730,3950,4160,3470],
