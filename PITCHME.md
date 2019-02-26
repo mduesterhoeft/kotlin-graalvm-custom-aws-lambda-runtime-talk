@@ -152,4 +152,13 @@ Observed cold startup times
 
 @ulend
 
+---
+
+Questions?
+
+@fa[github] [mduesterhoeft/kotlin-graalvm-custom-aws-lambda-runtime-talk](https://github.com/mduesterhoeft/kotlin-graalvm-custom-aws-lambda-runtime-talk)
+
+@fa[medium] [Blog: Fighting cold startup issues for your Kotlin Lambda with GraalVM](https://medium.com/@mathiasdpunkt/fighting-cold-startup-issues-for-your-kotlin-lambda-with-graalvm-39d19b297730)
+
+
 
