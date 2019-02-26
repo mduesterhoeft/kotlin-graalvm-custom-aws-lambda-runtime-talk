@@ -115,7 +115,6 @@ Observed cold startup times
 <!-- 
 {
  "data": {
-  "labels": ["1","2","3","4","5"],
   "datasets": [
    {
     "data":[142,154,135,173,173],
@@ -141,5 +140,16 @@ Observed cold startup times
 </canvas>
 
 ---
+
+## Conclusion
+
+@ul
+
+- GraalVM native images greatly reduce startup time
+- native image also seem to improve runtime performance
+- creating native images for an application is cumbersome
+- native image generation is slow
+
+@ulend
 
 
