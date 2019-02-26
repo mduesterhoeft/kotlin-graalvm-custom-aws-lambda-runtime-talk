@@ -111,15 +111,19 @@ What is happening during JVM startup?
 
 Observed cold startup times
 
-<canvas data-chart="bar">
+<canvas data-chart="line">
 <!-- 
 {
  "data": {
-  "labels": ["java8","custom"],
+  "labels": [],
   "datasets": [
    {
-    "data":[170,2100],
-    "label":"hello world"
+    "data":[142,154,135,173, 173],
+    "label":"custom runtime"
+   },
+   {
+    "data":[2240,2038,2150, 2110, 2080],
+    "label":"java8 runtime"
    }
   ]
  }, 
