@@ -6,7 +6,7 @@ plugins {
   id("com.github.johnrengelman.shadow") version "4.0.3"
 }
 
-group = "com.github.com.github.md"
+group = "com.github.md"
 version = "1.0"
 
 repositories {
