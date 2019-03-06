@@ -171,3 +171,4 @@ Observed cold startup times
 
 ## Thank you!
 
+![](slides/drive.png)
