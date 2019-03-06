@@ -171,4 +171,4 @@ Observed cold startup times
 
 ## Thank you!
 
-![](slides/drive.png)
+<img src="slides/drive.png" style="width:50%" />
