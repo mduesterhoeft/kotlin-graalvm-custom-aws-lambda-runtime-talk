@@ -8,17 +8,20 @@ import com.amazonaws.services.lambda.runtime.RequestHandler
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
+import org.apache.log4j.Logger
 import org.http4k.client.JavaHttpClient
 import org.http4k.core.HttpHandler
 import org.http4k.core.Method
 import org.http4k.core.Method.*
 import org.http4k.core.Request
 import org.http4k.core.Response
+import org.slf4j.LoggerFactory
 
 const val requestIdHeaderName = "lambda-runtime-aws-request-id"
 const val runtimeApiEndpointVariableName = "AWS_LAMBDA_RUNTIME_API"
 const val handlerVariableName = "_HANDLER"
 
+val log = LoggerFactory.getLogger("runtime")
 val client: HttpHandler = JavaHttpClient()
 
 val json = jacksonObjectMapper().disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
@@ -35,12 +38,18 @@ fun main() {
 
         val requestId = invocationResponse.header(requestIdHeaderName)!!
 
-        val request = json.readValue<ApiGatewayRequest>(invocationResponse.body.stream)
+        try {
+            val request = json.readValue<ApiGatewayRequest>(invocationResponse.body.stream)
 
-        val response = handlerInstance.handleRequest(request, CustomContext(requestId))
+            val response = handlerInstance.handleRequest(request, CustomContext(requestId))
 
-        client(Request(POST, "http://$runtimeApiEndpoint/2018-06-01/runtime/invocation/$requestId/response"
-        ).body(json.writeValueAsString(response)))
+            client(Request(POST, "http://$runtimeApiEndpoint/2018-06-01/runtime/invocation/$requestId/response")
+                .body(json.writeValueAsString(response)))
+        } catch(e: RuntimeException) {
+           log.error("Error during invocation $requestId - ${e.message}", e)
+            client(Request(POST, "http://$runtimeApiEndpoint/2018-06-01/runtime/invocation/$requestId/error")
+                .body("""{ "errorMessage": "Error during invocation $requestId - ${e.message}""""))
+        }
     }
 }
 
