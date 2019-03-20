@@ -9,24 +9,24 @@ import java.util.UUID
 
 class Handler: RequestHandler<ApiGatewayRequest, ApiGatewayResponse> {
 
-  val dynamoClient = DynamoDbClient.create()
+  private val dynamoClient = DynamoDbClient.create()
 
   override fun handleRequest(input: ApiGatewayRequest, context:Context): ApiGatewayResponse {
 
-    val name = input.pathParameters?.values?.first()
+      val name = input.pathParameters?.values?.first()
 
-    dynamoClient.putItem(
-            PutItemRequest.builder()
-                    .tableName("greetings")
-                    .item(mutableMapOf(
-                            "id" to AttributeValue.builder().s(UUID.randomUUID().toString()).build(),
-                            "name" to AttributeValue.builder().s(name).build()
-                    )).build())
+      dynamoClient.putItem(
+          PutItemRequest.builder()
+              .tableName("greetings")
+              .item(mutableMapOf(
+                  "id" to AttributeValue.builder().s(UUID.randomUUID().toString()).build(),
+                  "name" to AttributeValue.builder().s(name).build()
+              )).build())
 
-    return ApiGatewayResponse.build {
-      statusCode = 200
-      objectBody = HelloResponse("Hello $name")
-      headers = mapOf("X-Powered-By" to "AWS Lambda & serverless")
-    }
+      return ApiGatewayResponse.build {
+          statusCode = 200
+          objectBody = HelloResponse("Hello $name")
+          headers = mapOf("X-Powered-By" to "AWS Lambda & serverless")
+      }
   }
 }

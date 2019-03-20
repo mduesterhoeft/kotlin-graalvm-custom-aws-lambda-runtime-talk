@@ -32,8 +32,9 @@ dependencies {
   compile("com.amazonaws:aws-lambda-java-core:1.2.0")
   compile("com.fasterxml.jackson.core:jackson-databind:2.9.6")
   compile("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.6")
-  compile("software.amazon.awssdk:dynamodb:2.2.0")
-  compileOnly("com.oracle.substratevm:svm:1.0.0-rc12")
+  
+  compile("software.amazon.awssdk:dynamodb:2.5.11")
+  compileOnly("com.oracle.substratevm:svm:1.0.0-rc14")
 
   testCompile("org.junit.jupiter:junit-jupiter-engine:5.3.2")
 }
