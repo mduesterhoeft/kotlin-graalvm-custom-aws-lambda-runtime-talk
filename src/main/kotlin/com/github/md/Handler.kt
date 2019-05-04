@@ -7,9 +7,7 @@ import software.amazon.awssdk.services.dynamodb.model.AttributeValue
 import software.amazon.awssdk.services.dynamodb.model.PutItemRequest
 import java.util.UUID
 
-class Handler: RequestHandler<ApiGatewayRequest, ApiGatewayResponse> {
-
-  val dynamoClient = DynamoDbClient.create()
+class Handler(val dynamoClient: DynamoDbClient = DynamoDbClient.create()): RequestHandler<ApiGatewayRequest, ApiGatewayResponse> {
 
   override fun handleRequest(input: ApiGatewayRequest, context:Context): ApiGatewayResponse {
 

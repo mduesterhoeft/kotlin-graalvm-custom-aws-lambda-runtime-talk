@@ -4,12 +4,13 @@
 rm -rf build/package
 mkdir build/package
 
-docker run --rm --name graal -v $(pwd):/working oracle/graalvm-ce:1.0.0-rc12 \
+GRAAL_VERSION="1.0.0-rc15"
+NATIVE_IMAGE_CONFIG_DIR="/working/build/native-image-config"
+
+docker run --rm --name graal -v $(pwd):/working oracle/graalvm-ce:${GRAAL_VERSION} \
     /bin/bash -c "native-image --enable-http --enable-https --enable-url-protocols=http,https --enable-all-security-services \
                     -Djava.net.preferIPv4Stack=true \
-                    -H:ReflectionConfigurationFiles=/working/reflect.json \
-                    -H:DynamicProxyConfigurationFiles=/working/proxy-conf.json \
-                    --delay-class-initialization-to-runtime=com.github.md.ApplicationKt \
+                    -H:ConfigurationFileDirectories=${NATIVE_IMAGE_CONFIG_DIR} \
                     --delay-class-initialization-to-runtime=software.amazon.awssdk.awscore.client.builder.AwsDefaultClientBuilder \
                     --delay-class-initialization-to-runtime=software.amazon.awssdk.auth.signer.internal.AbstractAws4Signer \
                     --delay-class-initialization-to-runtime=software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider \
@@ -33,8 +34,8 @@ docker run --rm --name graal -v $(pwd):/working oracle/graalvm-ce:1.0.0-rc12 \
                     -H:+ReportUnsupportedElementsAtRuntime --no-server -jar /working/build/libs/package-1.0.jar \
                     ; \
                     cp package-1.0 /working/build/package/server; \
-                    cp /opt/graalvm-ce-1.0.0-rc12/jre/lib/security/cacerts /working/build/package/cacerts; \
-                    cp /opt/graalvm-ce-1.0.0-rc12/jre/lib/amd64/libsunec.so /working/build/package/libsunec.so"
+                    cp /opt/graalvm-ce-${GRAAL_VERSION}/jre/lib/security/cacerts /working/build/package/cacerts; \
+                    cp /opt/graalvm-ce-${GRAAL_VERSION}/jre/lib/amd64/libsunec.so /working/build/package/libsunec.so"
 
 cp runtime/* build/package
 
