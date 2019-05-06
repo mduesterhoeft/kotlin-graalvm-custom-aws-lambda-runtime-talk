@@ -29,7 +29,6 @@ dependencies {
   compile("com.fasterxml.jackson.core:jackson-databind:$jackson")
   compile("com.fasterxml.jackson.module:jackson-module-kotlin:$jackson")
   compile("software.amazon.awssdk:dynamodb:2.5.10")
-  compileOnly("com.oracle.substratevm:svm:1.0.0-rc16")
 
   testCompile("org.junit.jupiter:junit-jupiter-engine:5.3.2")
 }

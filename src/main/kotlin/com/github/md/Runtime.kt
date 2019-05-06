@@ -52,7 +52,6 @@ class AwsRuntimeApi: RuntimeApi {
                 .let { json.readValue(it.body.stream) }
 
     override fun sendResponse(response: ApiGatewayResponse) {
-        println("returning response for request with requestId=$currentRequestId - ${response.body}")
         client(Request(POST, "http://$runtimeApiEndpoint/2018-06-01/runtime/invocation/$currentRequestId/response")
                 .body(json.writeValueAsString(response)))    }
 
