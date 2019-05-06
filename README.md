@@ -31,3 +31,8 @@ Invoke the function running the `custom` runtime
 http https://<function-host>/dev/hello-runtime/sample
 ```
 
+
+## Extended example 
+
+An extended example that adds DynamoDB to the sample can be found in the [dynamodb](https://github.com/mduesterhoeft/kotlin-graalvm-custom-aws-lambda-runtime-talk/tree/dynamodb) branch.
+
