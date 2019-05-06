@@ -32,7 +32,11 @@ http https://<function-host>/dev/hello-runtime/sample
 ```
 
 
-## Extended example 
+## Extended example a
+
+### DynamoDB 
 
 An extended example that adds DynamoDB to the sample can be found in the [dynamodb](https://github.com/mduesterhoeft/kotlin-graalvm-custom-aws-lambda-runtime-talk/tree/dynamodb) branch.
+
+The [dynamodb-agent](https://github.com/mduesterhoeft/kotlin-graalvm-custom-aws-lambda-runtime-talk/tree/dynamodb) branch builds on the DynamoDB example and shows how to use the GraalVM native image trace agent (aka [assisted configuration](https://github.com/oracle/graal/blob/master/substratevm/CONFIGURE.md)).
 
