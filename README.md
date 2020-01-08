@@ -10,7 +10,7 @@ The presentation slides can be found here - https://gitpitch.com/mduesterhoeft/k
 
 ## Running the sample
 
-The `master` branch contains a runnable sample of an application that exposes the same [handler](src/main/kotlin/com/github/md/Handler.kt) and exposes it via the standard `java8` runtime and a custom runtime.
+The `master` branch contains a runnable sample of an application that exposes the same [handler](src/main/kotlin/com/github/md/Handler.kt) and exposes it via the standard `java11` runtime and a custom runtime.
 
 To build and deploy the function run the following:
 
@@ -32,7 +32,7 @@ http https://<function-host>/dev/hello-runtime/sample
 ```
 
 
-## Extended example a
+## Extended examples
 
 ### DynamoDB 
 
