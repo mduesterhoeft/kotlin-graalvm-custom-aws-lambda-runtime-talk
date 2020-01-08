@@ -3,7 +3,7 @@ service: kotlin-graalvm-custom-runtime-talk
 
 provider:
   name: aws
-  runtime: java8
+  runtime: java11
   region: eu-central-1
 
 package:
@@ -17,7 +17,7 @@ functions:
           path: hello/{name}
           method: get
     package:
-      artifact: build/libs/package-1.0.jar
+      artifact: build/libs/package-1.0-all.jar
   hello-runtime:
     handler: com.github.md.Handler
     runtime: provided

@@ -27,7 +27,7 @@ val json = jacksonObjectMapper().disable(DeserializationFeature.FAIL_ON_UNKNOWN_
 fun main() {
     val runtimeApiEndpoint = System.getenv(runtimeApiEndpointVariableName)
     val handler = System.getenv(handlerVariableName)
-    val handlerInstance = Class.forName(handler).newInstance() as RequestHandler<ApiGatewayRequest, ApiGatewayResponse>
+    val handlerInstance = Class.forName(handler).getDeclaredConstructor().newInstance() as RequestHandler<ApiGatewayRequest, ApiGatewayResponse>
 
     while(true) {
         val invocationResponse: Response =

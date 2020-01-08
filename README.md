@@ -21,7 +21,7 @@ To build and deploy the function run the following:
 serverless deploy
 ```
 
-Invoke the function running the `java8` runtime
+Invoke the function running the `java11` runtime
 ```
 http https://<function-host>/dev/hello/sample
 ```

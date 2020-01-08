@@ -2,8 +2,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
-  kotlin("jvm") version "1.3.21"
-  id("com.github.johnrengelman.shadow") version "4.0.3"
+  kotlin("jvm") version "1.3.61"
+  id("com.github.johnrengelman.shadow") version "5.1.0"
 }
 
 group = "com.github.com.github.md"
@@ -34,5 +34,5 @@ dependencies {
 }
 
 tasks.withType<KotlinCompile> {
-  kotlinOptions.jvmTarget = "1.8"
+  kotlinOptions.jvmTarget = "11"
 }
